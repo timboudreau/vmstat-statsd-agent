@@ -22,11 +22,11 @@ Configuration
 -------------
 All of the above configuration items could also be put in a JSON file in /ect/vmstat-statsd-agent.json (command-line args will override if present).  Possible values:
 
-    * **host** - the statsd host
-    * **port** - the statsd port - default `8125`
-    * **tcp** - true/false - use TCP instead of UDP to send stats to statsd - default `false`
-    * **prefix** - prefix to prepend to stats, for use in graphite's ui - default `test`
-    * **vmstat** - the path to `vmstat`, default `/usr/bin/vmstat`
+ * **host** - the statsd host
+ * **port** - the statsd port - default `8125`
+ * **tcp** - true/false - use TCP instead of UDP to send stats to statsd - default `false`
+ * **prefix** - prefix to prepend to stats, for use in graphite's ui - default `test`
+ * **vmstat** - the path to `vmstat`, default `/usr/bin/vmstat`
 
 If you use a JSON configuration file, you can also specify which stats are transmitted and what names are used for them.  The defaults map names of
 output as shown in vmstats default output to friendly names used in stats.  If you do not want to publish a 

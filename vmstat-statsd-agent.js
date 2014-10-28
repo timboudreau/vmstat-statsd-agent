@@ -12,7 +12,7 @@ var defaults = {
     prefix: 'test',
     args: '-S K',
     delay: 10,
-    log: true,
+    log: false,
     mapping: {
         r: 'runnable',
         b: 'sleeping',
@@ -62,7 +62,7 @@ function onConfigurationLoaded(err, config) {
                     var name = names[i];
                     var displayName = config.mapping[names[i]];
                     if (displayName) {
-                        if (log) {
+                        if (config.log) {
                             console.log(displayName + ": " + res[i + 1]);
                         }
                         statsd.gauge(displayName, parseInt(res[i + 1]));

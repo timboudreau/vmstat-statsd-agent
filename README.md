@@ -20,7 +20,7 @@ if the statsd server is down, this application will not notice.
 
 Configuration
 -------------
-Configuration is done using a JSON file in named vmstat-statsd-agent.json which 
+Configuration is done using a JSON file named vmstat-statsd-agent.json which 
 can be located in `/etc`, `/opt/local/etc`, `~/` or `./` (or all of the above, 
 merged in that order).  Possible values:
 

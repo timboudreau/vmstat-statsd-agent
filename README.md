@@ -57,4 +57,4 @@ particular stat, simply remove it from the `mapping` portion of the config.
 			  }
 		}
 
-![Screen Shot](screen.png, "Graphite Screen Shot")
+![Screen Shot](https://raw.githubusercontent.com/timboudreau/vmstat-statsd-agent/master/screen.gif, "Graphite Screen Shot")

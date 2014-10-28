@@ -37,6 +37,10 @@ If you use a JSON configuration file, you can also specify which stats are trans
 output as shown in vmstats default output to friendly names used in stats using the `mapping` sub-object.  
 If you do not want to publish a particular stat, simply remove it from the `mapping` portion of the config.
 
+Example Configuration File
+--------------------------
+
+Here is an example configuration file, showing all of the default values.  These will be used automatically; if you have a configuration file, you only need include those items that are *different* than the defaults:
 
 		{
 			  "host": "ustatsd.timboudreau.org",
@@ -44,7 +48,9 @@ If you do not want to publish a particular stat, simply remove it from the `mapp
 			  "tcp": false,
 			  "vmstat": "/usr/bin/vmstat",
 			  "prefix": "test",
+			  "args": "-S K",
 			  "delay": 10,
+			  "log": false,
 			  "mapping": {
 				    "r": "runnable",
 				    "b": "sleeping",
@@ -58,8 +64,15 @@ If you do not want to publish a particular stat, simply remove it from the `mapp
 				    "sy": "kernelTime",
 				    "id": "idleTime",
 				    "wa": "ioWaitTime",
-				    "st": "timeStolen"
+				    "st": "timeStolen",
+				    "swpd": "virtualMemory",
+				    "free": "freeMemory",
+				    "buff": "bufferMemory",
+				    "cache": "cacheMemory",
+				    "inact": "inactiveMemory",
+				    "active": "activeMemory"
 			  }
 		}
+
 
 ![Screen Shot](screen.gif "Graphite Screen Shot")

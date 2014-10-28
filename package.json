@@ -7,16 +7,16 @@
     "name" : "Tim Boudreau",
     "email" : "tim@timboudreau.com"
   },
-  "keywords" : [ ],
+  "keywords" : [ "vmstat", "statsd" ],
   "licenses" : {
     "type" : "mit"
   },
   "repository" : {
     "type" : "git",
-    "url" : "git://github.com/YOUR_LOGIN/vmstat-statsd-agent.git"
+    "url" : "git@github.com:timboudreau/vmstat-statsd-agent.git"
   },
   "bugs" : {
-    "url" : "http://github.com/YOUR_LOGIN/vmstat-statsd-agent/issues"
+    "url" : "https://github.com/timboudreau/vmstat-statsd-agent"
   },
   "dependencies" : {
     "cfig" : "1.0.2",

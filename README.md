@@ -30,6 +30,8 @@ merged in that order).  Possible values:
  - **prefix** - prefix to prepend to stats, for use in graphite's ui - default `test`
  - **vmstat** - the path to `vmstat`, default `/usr/bin/vmstat`
  - **log** - log output to the command-line as well, useful for testing
+ - **args** - arguments to vmstat other than the delay - by default, log `-S K` to log in kilobytes
+ - **delay** - interval in seconds for vmstat to report stats
 
 If you use a JSON configuration file, you can also specify which stats are transmitted and what names are used for them.  The defaults map names of
 output as shown in vmstats default output to friendly names used in stats using the `mapping` sub-object.  

@@ -12,6 +12,7 @@ var defaults = {
     prefix: 'test',
     args: '-S K',
     delay: 10,
+    log: true,
     mapping: {
         r: 'runnable',
         b: 'sleeping',
@@ -26,12 +27,12 @@ var defaults = {
         id: 'idleTime',
         wa: 'ioWaitTime',
         st: 'timeStolen',
-        swpd : 'virtualMemory',
-        free : 'freeMemory',
-        buff : 'bufferMemory',
-        cache : 'cacheMemory',
-        inact : 'inactiveMemory',
-        active : 'activeMemory'
+        swpd: 'virtualMemory',
+        free: 'freeMemory',
+        buff: 'bufferMemory',
+        cache: 'cacheMemory',
+        inact: 'inactiveMemory',
+        active: 'activeMemory'
     }
 };
 // order of the data as it appears in statsd's output
@@ -61,7 +62,9 @@ function onConfigurationLoaded(err, config) {
                     var name = names[i];
                     var displayName = config.mapping[names[i]];
                     if (displayName) {
-                        console.log(displayName + ": " + res[i + 1]);
+                        if (log) {
+                            console.log(displayName + ": " + res[i + 1]);
+                        }
                         statsd.gauge(displayName, parseInt(res[i + 1]));
                     }
                 }

@@ -1,0 +1,25 @@
+{
+  "name" : "vmstat-statsd-agent",
+  "description" : "Publishes vmstat info to statsd",
+  "version" : "0.0.1",
+  "main" : "./vmstat-statsd-agent.js",
+  "author" : {
+    "name" : "Tim Boudreau",
+    "email" : "tim@timboudreau.com"
+  },
+  "keywords" : [ ],
+  "licenses" : {
+    "type" : "mit"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/YOUR_LOGIN/vmstat-statsd-agent.git"
+  },
+  "bugs" : {
+    "url" : "http://github.com/YOUR_LOGIN/vmstat-statsd-agent/issues"
+  },
+  "dependencies" : {
+    "cfig" : "1.0.2",
+    "statsy" : "0.2.0"
+  }
+}

@@ -10,6 +10,7 @@ var defaults = {
     tcp: false,
     vmstat: '/usr/bin/vmstat',
     prefix: 'test',
+    args: '-S K',
     delay: 10,
     mapping: {
         r: 'runnable',
@@ -24,14 +25,19 @@ var defaults = {
         sy: 'kernelTime',
         id: 'idleTime',
         wa: 'ioWaitTime',
-        st: 'timeStolen'
+        st: 'timeStolen',
+        swpd : 'virtualMemory',
+        free : 'freeMemory',
+        buff : 'bufferMemory',
+        cache : 'cacheMemory',
+        inact : 'inactiveMemory',
+        active : 'activeMemory'
     }
 };
+// order of the data as it appears in statsd's output
 var names = [
     'r', 'b', 'swpd', 'free', 'buff', 'cache', 'si', 'so', 'bi', 'bo', 'in', 'cs', 'us', 'sy', 'id', 'wa', 'st'
 ];
-
-console.log(JSON.stringify(defaults, null, 100))
 
 var statsLineRegex = /\s*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)$/;
 
@@ -43,7 +49,7 @@ function onConfigurationLoaded(err, config) {
     }
     var statsd = new Statsy(config);
 
-    var vmstatCommandline = config.vmstat + ' ' + config.delay;
+    var vmstatCommandline = config.vmstat + ' ' + config.args + ' ' + config.delay;
     var proc = child_process.exec(vmstatCommandline);
     var stream = lineStream();
     // 17 integer fields per vmstat output line

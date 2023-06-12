@@ -12,7 +12,7 @@ var defaults = {
     prefix: 'test',
     args: '-S K',
     delay: 10,
-    log: false,
+    log: true,
     mapping: {
         r: 'runnable',
         b: 'sleeping',
@@ -65,7 +65,7 @@ function onConfigurationLoaded(err, config) {
                         if (config.log) {
                             console.log(displayName + ": " + res[i + 1]);
                         }
-                        statsd.gauge(displayName, parseInt(res[i + 1]));
+                        statsd.gauge('vmstat.' + displayName, parseInt(res[i + 1]));
                     }
                 }
             }
